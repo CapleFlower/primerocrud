@@ -142,4 +142,20 @@ class database
 
         return $this->executar($query);
     }
+
+    /**
+     * Método responsavel por executar exclusão no banco  de dados
+     * @params string $where
+     * return boolean
+     */
+
+     public function delete($where) {
+         //monta query
+         $query = 'DELETE FROM '. $this->table.' WHERE '. $where;
+         // echo "<pre>"; print_r($query); echo "</pre>"; exit;
+
+         //executar query
+         $this->executar($query);
+         return true;
+     }
 }

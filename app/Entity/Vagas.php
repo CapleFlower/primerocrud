@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use \App\Db\Database;
+use App\Db\database as DbDatabase;
 use \PDO;
 
 class Vagas {
@@ -89,7 +90,16 @@ class Vagas {
         return ($objDatabase)->select('id = ' . $id)->fetchObject(self::class);
       }
 
+      
+     /**função para excluir vagas no banco
+      * @return boolean
+      */
 
+      public function excluir() {
+        $objDatabase = new Database('vagas');
 
+        return ($objDatabase)->delete('id = ' . $this->id);
+      }
+  
 }
 ?>

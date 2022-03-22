@@ -20,6 +20,15 @@ use App\Entity\Vagas;
         exit;
     }
 
+    //validação do post 
+    if(isset($_POST['excluir'])){
+
+        $obVaga->excluir();
+
+        header('location: index.php?status=success');
+        exit;
+    }
+
     require __DIR__.'/includes/header.php';
 
     require __DIR__.'/includes/confirmarExclusao.php';
