@@ -2,6 +2,10 @@
 
     require __DIR__.'/vendor/autoload.php';
 
+    use \App\Entity\Vagas;
+    $vagas = Vagas::getVagas();
+    // echo "<pre>"; print_r ($vagas); echo "</pre>"; exit; 
+
 
     require __DIR__.'/includes/header.php';
 
