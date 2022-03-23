@@ -100,6 +100,25 @@ class Vagas {
 
         return ($objDatabase)->delete('id = ' . $this->id);
       }
+
+/** 
+     * Função para atualizar a vaga no banco 
+     * @return boolean
+    */
+    public function atualizar() {
+      //Definir a data
+      $this->data = date('Y-m-d H:i:s');
+
+      $objDatabase = new Database('vagas');
+
+      return ($objDatabase)->update('id = ' . $this->id, [
+          'titulo' => $this->titulo,
+          'descricao' => $this->descricao,
+          'status' => $this->status,
+          'data' => $this->data
+      ]);
+  }
+
   
 }
 ?>
